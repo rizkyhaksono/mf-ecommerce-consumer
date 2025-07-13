@@ -1,13 +1,15 @@
 import { createModuleFederationConfig } from '@module-federation/rsbuild-plugin';
 
 export default createModuleFederationConfig({
-  name: 'mf-ecommerce-consumer',
+  name: 'mfEcommerceConsumer',
   remotes: {
-    'provider': 'rslib_provider@https://unpkg.com/module-federation-rslib-provider@latest/dist/mf/mf-manifest.json',
+    paymentProvider: 'mfPaymentProvider@http://localhost:3001/mf-manifest.json',
+    productProvider: 'mfProductProvider@http://localhost:3002/mf-manifest.json',
   },
   shareStrategy: 'loaded-first',
   shared: {
     react: { singleton: true },
     'react-dom': { singleton: true },
   },
+  dts: false,
 });
