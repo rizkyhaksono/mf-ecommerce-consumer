@@ -1,56 +1,34 @@
-import React, { Suspense } from 'react';
-
-// Import components from providers
-const PaymentButton = React.lazy(() => import('paymentProvider/PaymentButton'));
-const ProductCard = React.lazy(() => import('productProvider/ProductCard'));
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import OrderSuccess from './pages/OrderSuccess';
+import About from './pages/About';
 
 const App = () => {
-  const handlePayment = (amount: number) => {
-    console.log(`Payment processed for $${amount}`);
-  };
-
-  const handleAddToCart = (product: { name: string; price: number }) => {
-    console.log('Added to cart:', product);
-  };
-
   return (
-    <div>
-      <h1>E-Commerce Consumer App</h1>
-
-      <div style={{ padding: '20px' }}>
-        <h2>Products from Product Provider</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-          <Suspense fallback={<div>Loading Product Card...</div>}>
-            <ProductCard
-              name="Wireless Headphones"
-              price={99.99}
-              description="High-quality wireless headphones with noise cancellation"
-              onAddToCart={handleAddToCart}
-            />
-          </Suspense>
-
-          <Suspense fallback={<div>Loading Product Card...</div>}>
-            <ProductCard
-              name="Smartphone"
-              price={699.99}
-              description="Latest smartphone with advanced features"
-              onAddToCart={handleAddToCart}
-            />
-          </Suspense>
+    <BrowserRouter>
+      <CartProvider>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/order-success" element={<OrderSuccess />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-
-        <h2>Payment from Payment Provider</h2>
-        <div style={{ marginTop: '20px' }}>
-          <Suspense fallback={<div>Loading Payment Button...</div>}>
-            <PaymentButton
-              amount={99.99}
-              currency="USD"
-              onPayment={handlePayment}
-            />
-          </Suspense>
-        </div>
-      </div>
-    </div>
+      </CartProvider>
+    </BrowserRouter>
   );
 };
 
