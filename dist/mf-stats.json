@@ -1,0 +1,156 @@
+{
+  "id": "mfEcommerceConsumer",
+  "name": "mfEcommerceConsumer",
+  "metaData": {
+    "name": "mfEcommerceConsumer",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "mf-ecommerce-consumer"
+    },
+    "remoteEntry": {
+      "name": "static/js/mfEcommerceConsumer.18240d48.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfEcommerceConsumer",
+    "pluginVersion": "0.16.0",
+    "prefetchInterface": false,
+    "publicPath": "/"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "shareScope": "default",
+      "name": "react",
+      "version": "18.3.1",
+      "eager": false,
+      "id": "mfEcommerceConsumer:react",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/964.e6563282.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "shareScope": "default",
+      "name": "react-dom",
+      "version": "*",
+      "eager": false,
+      "id": "mfEcommerceConsumer:react-dom",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/173.27d7c458.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    }
+  ],
+  "remotes": [
+    {
+      "alias": "authProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfAuthProvider",
+      "moduleName": "LoginModal",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3003/mf-manifest.json"
+    },
+    {
+      "alias": "authProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfAuthProvider",
+      "moduleName": "UserMenu",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3003/mf-manifest.json"
+    },
+    {
+      "alias": "productProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfProductProvider",
+      "moduleName": "ProductGrid",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3002/mf-manifest.json"
+    },
+    {
+      "alias": "productProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfProductProvider",
+      "moduleName": "ProductDetails",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3002/mf-manifest.json"
+    },
+    {
+      "alias": "paymentProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfPaymentProvider",
+      "moduleName": "ShoppingCart",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3001/mf-manifest.json"
+    },
+    {
+      "alias": "paymentProvider",
+      "consumingFederationContainerName": "mfEcommerceConsumer",
+      "federationContainerName": "mfPaymentProvider",
+      "moduleName": "CheckoutForm",
+      "usedIn": [
+        "src/bootstrap.tsx + 22 modules"
+      ],
+      "entry": "http://localhost:3001/mf-manifest.json"
+    }
+  ],
+  "exposes": [
+    {
+      "path": "./eventBus",
+      "id": "mfEcommerceConsumer:eventBus",
+      "name": "eventBus",
+      "requires": [],
+      "file": "src\\lib\\eventBus.ts",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_eventBus.968fe109.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      }
+    }
+  ]
+}

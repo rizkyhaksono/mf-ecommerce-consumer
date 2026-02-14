@@ -1,0 +1,124 @@
+{
+  "id": "mfEcommerceConsumer",
+  "name": "mfEcommerceConsumer",
+  "metaData": {
+    "name": "mfEcommerceConsumer",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "mf-ecommerce-consumer"
+    },
+    "remoteEntry": {
+      "name": "static/js/mfEcommerceConsumer.18240d48.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "mfEcommerceConsumer",
+    "pluginVersion": "0.16.0",
+    "prefetchInterface": false,
+    "publicPath": "/"
+  },
+  "shared": [
+    {
+      "id": "mfEcommerceConsumer:react",
+      "name": "react",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/964.e6563282.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "mfEcommerceConsumer:react-dom",
+      "name": "react-dom",
+      "version": "*",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/173.27d7c458.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "federationContainerName": "mfAuthProvider",
+      "moduleName": "LoginModal",
+      "alias": "authProvider",
+      "entry": "http://localhost:3003/mf-manifest.json"
+    },
+    {
+      "federationContainerName": "mfAuthProvider",
+      "moduleName": "UserMenu",
+      "alias": "authProvider",
+      "entry": "http://localhost:3003/mf-manifest.json"
+    },
+    {
+      "federationContainerName": "mfProductProvider",
+      "moduleName": "ProductGrid",
+      "alias": "productProvider",
+      "entry": "http://localhost:3002/mf-manifest.json"
+    },
+    {
+      "federationContainerName": "mfProductProvider",
+      "moduleName": "ProductDetails",
+      "alias": "productProvider",
+      "entry": "http://localhost:3002/mf-manifest.json"
+    },
+    {
+      "federationContainerName": "mfPaymentProvider",
+      "moduleName": "ShoppingCart",
+      "alias": "paymentProvider",
+      "entry": "http://localhost:3001/mf-manifest.json"
+    },
+    {
+      "federationContainerName": "mfPaymentProvider",
+      "moduleName": "CheckoutForm",
+      "alias": "paymentProvider",
+      "entry": "http://localhost:3001/mf-manifest.json"
+    }
+  ],
+  "exposes": [
+    {
+      "id": "mfEcommerceConsumer:eventBus",
+      "name": "eventBus",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/__federation_expose_eventBus.968fe109.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./eventBus"
+    }
+  ]
+}

@@ -147,14 +147,56 @@ declare module 'productProvider/ProductDetails' {
   export default ProductDetails;
 }
 
-declare module 'paymentProvider/PaymentComponent' {
+declare module 'authProvider/LoginModal' {
   import React from 'react';
-  const PaymentComponent: React.FC;
-  export default PaymentComponent;
+
+  interface LoginModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+  }
+
+  const LoginModal: React.FC<LoginModalProps>;
+  export default LoginModal;
 }
 
-declare module 'productProvider/ProductComponent' {
+declare module 'authProvider/UserMenu' {
   import React from 'react';
-  const ProductComponent: React.FC;
-  export default ProductComponent;
+
+  const UserMenu: React.FC;
+  export default UserMenu;
+}
+
+declare module 'authProvider/useAuth' {
+  interface User {
+    id: string;
+    name: string;
+    email: string;
+    avatar?: string;
+  }
+
+  interface AuthHook {
+    user: User | null;
+    isLoggedIn: boolean;
+    isLoading: boolean;
+    login: (email: string, password: string) => Promise<boolean>;
+    register: (name: string, email: string, password: string) => Promise<boolean>;
+    logout: () => void;
+  }
+
+  const useAuth: () => AuthHook;
+  export default useAuth;
+}
+
+declare module 'authProvider/AuthProvider' {
+  import React, { ReactNode } from 'react';
+
+  export const AuthProvider: React.FC<{ children: ReactNode }>;
+  export const useAuth: () => {
+    user: { id: string; name: string; email: string } | null;
+    isLoggedIn: boolean;
+    isLoading: boolean;
+    login: (email: string, password: string) => Promise<boolean>;
+    register: (name: string, email: string, password: string) => Promise<boolean>;
+    logout: () => void;
+  };
 }
